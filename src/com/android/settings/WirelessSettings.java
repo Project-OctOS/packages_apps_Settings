@@ -106,7 +106,7 @@ public class WirelessSettings extends SettingsPreferenceFragment {
         NetworkInfo ni = mCm.getActiveNetworkInfo();
         if (mTm.hasIccCard() && (ni != null)) {
             // Get provisioning URL
-            String url = "Provisioning"; 
+            String url = mCm.getMobileProvisioningUrl();
             if (!TextUtils.isEmpty(url)) {
                 // Send user to provisioning webpage
                 Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -347,3 +347,4 @@ public class WirelessSettings extends SettingsPreferenceFragment {
         return R.string.help_url_more_networks;
     }
 }
+
