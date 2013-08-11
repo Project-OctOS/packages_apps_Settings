@@ -50,10 +50,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import com.android.settings.ProxySelector;
 import com.android.settings.R;
@@ -66,7 +66,7 @@ import java.util.Iterator;
  * share the logic for controlling buttons, text fields, etc.
  */
 public class WifiConfigController implements TextWatcher,
-       AdapterView.OnItemSelectedListener, OnCheckedChangeListener {
+        View.OnClickListener, AdapterView.OnItemSelectedListener {
     private final WifiConfigUiBase mConfigUi;
     private final View mView;
     private final AccessPoint mAccessPoint;
@@ -78,6 +78,7 @@ public class WifiConfigController implements TextWatcher,
     // e.g. AccessPoint.SECURITY_NONE
     private int mAccessPointSecurity;
     private TextView mPasswordView;
+    private CheckBox mShowPassword;
 
     private String unspecifiedCert = "unspecified";
     private static final int unspecifiedCertIndex = 0;
@@ -193,9 +194,7 @@ public class WifiConfigController implements TextWatcher,
             showIpConfigFields();
             showProxyFields();
             mView.findViewById(R.id.wifi_advanced_toggle).setVisibility(View.VISIBLE);
-            ((CheckBox)mView.findViewById(R.id.wifi_advanced_togglebox))
-                    .setOnCheckedChangeListener(this);
-
+            mView.findViewById(R.id.wifi_advanced_togglebox).setOnClickListener(this);
 
             mConfigUi.setSubmitButton(context.getString(R.string.wifi_save));
         } else {
@@ -249,10 +248,9 @@ public class WifiConfigController implements TextWatcher,
                 showIpConfigFields();
                 showProxyFields();
                 mView.findViewById(R.id.wifi_advanced_toggle).setVisibility(View.VISIBLE);
-                ((CheckBox)mView.findViewById(R.id.wifi_advanced_togglebox))
-                    .setOnCheckedChangeListener(this);
+                mView.findViewById(R.id.wifi_advanced_togglebox).setOnClickListener(this);
                 if (showAdvancedFields) {
-                    ((CheckBox)mView.findViewById(R.id.wifi_advanced_togglebox)).setChecked(true);
+                    ((CheckBox) mView.findViewById(R.id.wifi_advanced_togglebox)).setChecked(true);
                     mView.findViewById(R.id.wifi_advanced_fields).setVisibility(View.VISIBLE);
                 }
             }
@@ -560,9 +558,13 @@ public class WifiConfigController implements TextWatcher,
         if (mPasswordView == null) {
             mPasswordView = (TextView) mView.findViewById(R.id.password);
             mPasswordView.addTextChangedListener(this);
-            ((CheckBox) mView.findViewById(R.id.show_password))
-                .setOnCheckedChangeListener(this);
-
+            mShowPassword = (CheckBox) mView.findViewById(R.id.show_password);
+            mShowPassword.setOnClickListener(this);
+            mShowPassword.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    updatePasswordVisibility(isChecked);
+                }
+            });
             if (mAccessPoint != null && mAccessPoint.networkId != INVALID_NETWORK_ID) {
                 mPasswordView.setHint(R.string.wifi_unchanged);
             }
@@ -870,18 +872,11 @@ public class WifiConfigController implements TextWatcher,
     }
 
     @Override
-    public void onCheckedChanged(CompoundButton view, boolean isChecked) {
+    public void onClick(View view) {
         if (view.getId() == R.id.show_password) {
-            int pos = mPasswordView.getSelectionEnd();
-            mPasswordView.setInputType(
-                    InputType.TYPE_CLASS_TEXT | (isChecked ?
-                            InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD :
-                                InputType.TYPE_TEXT_VARIATION_PASSWORD));
-            if (pos >= 0) {
-                ((EditText)mPasswordView).setSelection(pos);
-            }
+            updatePasswordVisibility(((CheckBox) view).isChecked());
         } else if (view.getId() == R.id.wifi_advanced_togglebox) {
-            if (isChecked) {
+            if (((CheckBox) view).isChecked()) {
                 mView.findViewById(R.id.wifi_advanced_fields).setVisibility(View.VISIBLE);
             } else {
                 mView.findViewById(R.id.wifi_advanced_fields).setVisibility(View.GONE);

@@ -106,7 +106,7 @@ public class WirelessSettings extends SettingsPreferenceFragment {
         NetworkInfo ni = mCm.getActiveNetworkInfo();
         if (mTm.hasIccCard() && (ni != null)) {
             // Get provisioning URL
-            String url = mCm.getMobileProvisioningUrl();
+            String url = getProvisioningUrl();
             if (!TextUtils.isEmpty(url)) {
                 // Send user to provisioning webpage
                 Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -144,6 +144,28 @@ public class WirelessSettings extends SettingsPreferenceFragment {
             showDialog(MANAGE_MOBILE_PLAN_DIALOG_ID);
         }
     }
+
+
+
+
+ private String getProvisioningUrl() {
+        String url = "http://google.com";
+        // populate the iccid, imei and phone number in the provisioning url.
+        if (!TextUtils.isEmpty(url)) {
+            String phoneNumber = mTm.getLine1Number();
+            if (TextUtils.isEmpty(phoneNumber)) {
+                phoneNumber = "0000000000";
+            }
+            url = String.format(url,
+                    mTm.getSimSerialNumber() /* ICCID */,
+                    mTm.getDeviceId() /* IMEI */,
+                    phoneNumber /* Phone number */);
+        }
+
+        return url;
+    }
+
+
 
     @Override
     public Dialog onCreateDialog(int dialogId) {
@@ -347,4 +369,3 @@ public class WirelessSettings extends SettingsPreferenceFragment {
         return R.string.help_url_more_networks;
     }
 }
-

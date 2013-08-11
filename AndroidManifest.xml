@@ -73,6 +73,7 @@
             android:requiredForAllUsers="true"
             android:supportsRtl="true">
 
+   
         <!-- Settings -->
 
         <activity android:name="Settings"
@@ -262,8 +263,7 @@
         <activity android:name="ApnSettings"
                 android:label="@string/apn_settings"
                 android:configChanges="orientation|keyboardHidden|screenSize"
-                android:launchMode="singleTask"
-                android:parentActivityName="Settings$WirelessSettingsActivity">
+                android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.settings.APN_SETTINGS" />
@@ -795,7 +795,6 @@
                 android:value="com.android.settings.NotificationStation" />
         </activity>
 
-        <!--
         <activity android:name="Settings$AppOpsSummaryActivity"
                 android:label="@string/app_ops_settings"
                 android:taskAffinity=""
@@ -804,15 +803,17 @@
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.settings.APP_OPS_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
+                <!-- Not yet ready to expose.
                 <category android:name="android.intent.category.VOICE_LAUNCH" />
                 <category android:name="com.android.settings.SHORTCUT" />
+                -->
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.applications.AppOpsSummary" />
+            <!--
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                android:resource="@id/application_settings" />
+                android:resource="@id/application_settings" /> -->
         </activity>
-        -->
         
         <activity android:name="Settings$LocationSettingsActivity"
                 android:label="@string/location_settings_title"
