@@ -1272,7 +1272,24 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.wfd.WifiDisplaySettings" />
         </activity>
+        
+        <!-- Oct settings -->
 
+        <activity android:name="Settings$OctSettingsActivity"
+                android:label="@string/oct_settings_title"
+                android:taskAffinity="com.android.settings"
+                android:parentActivityName="Settings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.settings.APPLICATION_OCT_SETTINGS" />
+                <action android:name="com.android.settings.APPLICATION_OCT_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.OctSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/oct_settings" />
+        </activity>
 
         <!-- Development settings -->
 
