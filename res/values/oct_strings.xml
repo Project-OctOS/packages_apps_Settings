@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2013 The OctOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  	<!-- [CHAR LIMIT=NONE] Device Info screen. Countdown for user taps to enable OctOS settings -->
+    <plurals name="show_oct_countdown">
+        <item quantity="one">Click us <xliff:g id="step_count">%1$d</xliff:g> more times for the OctOS experience </item>
+        <item quantity="other">You know you want to click <xliff:g id="step_count">%1$d</xliff:g> more times. </item>
+    </plurals>
+	  <!-- [CHAR LIMIT=NONE] Device Info screen. Confirmation that OctOS settings are enabled -->
+    <string name="show_oct_on">Welcome to the show. </string>
+    <!-- [CHAR LIMIT=NONE] Device Info screen. Okay we get it, stop pressing, you already have it on -->
+    <string name="show_oct_already">Just what the hell do you think you're doing? </string>
+    
+    <!-- PERSONALIZATION Settings  -->
+    <!-- Settings main menu category heading. Interface (Launcher, Themes, System). [CHAR LIMIT=40] -->
+    <string name="header_category_options">Oct Settings</string>
+    
+    <!-- PERSONALIZATION Settings  -->
+    <!-- Settings main menu category heading. Interface (Launcher, Themes, System). [CHAR LIMIT=40] -->
+    <string name="header_category_interface">Personalization</string>
+    
+    <!-- Themes settings  -->
+    <string name="themes_settings_title">Themes</string>
+    
+</resources>
