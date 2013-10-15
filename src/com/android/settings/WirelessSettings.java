@@ -98,6 +98,8 @@ public class WirelessSettings extends SettingsPreferenceFragment {
 
     private String mManageMobilePlanMessage;
 
+    private static final String MOBILE_PROVISIONING_ACTION
+            = "com.android.server.connectivityservice.MOBILE_PROVISIONING_ACTION";
     public void onManageMobilePlanClick() {
         log("onManageMobilePlanClick:");
         mManageMobilePlanMessage = null;
@@ -112,6 +114,10 @@ public class WirelessSettings extends SettingsPreferenceFragment {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(url));
                 startActivity(intent);
+                Intent intent = new Intent(MOBILE_PROVISIONING_ACTION);
+                intent.putExtra("EXTRA_URL", url);
+                Context context = getActivity().getBaseContext();
+                context.sendBroadcast(intent);
                 mManageMobilePlanMessage = null;
             } else {
                 // No provisioning URL
