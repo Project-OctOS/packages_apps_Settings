@@ -38,19 +38,9 @@
         <item quantity="other">You are now <xliff:g id="step_count">%1$d</xliff:g> steps away from being a developer.</item>
     </plurals>
     <!-- [CHAR LIMIT=NONE] Device Info screen. Confirmation that developer settings are enabled -->
-    <string name="">You are now a developer!</string>
+    <string name="show_dev_on">You are now a developer!</string>
     <!-- [CHAR LIMIT=NONE] Device Info screen. Okay we get it, stop pressing, you already have it on -->
     <string name="show_dev_already">No need, you are already a developer.</string>
-    
-    <!-- [CHAR LIMIT=NONE] Device Info screen. Countdown for user taps to enable oct settings -->
-    <plurals name="show_oct_countdown">
-        <item quantity="one">You are now <xliff:g id="step_count">%1$d</xliff:g> step away from being an octo.</item>
-        <item quantity="other">You are now <xliff:g id="step_count">%1$d</xliff:g> steps away from being an.</item>
-    </plurals>
-    <!-- [CHAR LIMIT=NONE] Device Info screen. Confirmation that oct settings are enabled -->
-    <string name="show_oct_on">You are now an octo!</string>
-    <!-- [CHAR LIMIT=NONE] Device Info screen. Okay we get it, stop pressing, you already have it on -->
-    <string name="show_oct_already">No need, you are already an octo.</string>
 
     <!-- Category headings in left-pane header menu --> <skip />
     <!-- Settings main menu category heading. Wireless and networks (Wi-Fi, Bluetooth, data usage...). [CHAR LIMIT=40] -->
@@ -4576,11 +4566,4 @@
     <!-- Themes settings  -->
     <string name="themes_settings_title">Themes</string> 
 
-    <!-- OCT Settings  -->
-    <!-- Settings main menu category heading. Interface (Launcher, Themes, System). [CHAR LIMIT=40] -->
-    <string name="header_category_interface">Oct Settings</string>
-    
-    <!-- Themes settings  -->
-    <string name="themes_settings_title">Themes</string> 
-    
 </resources>
