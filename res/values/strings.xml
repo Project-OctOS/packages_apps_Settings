@@ -34,13 +34,14 @@
     <string name="device_info_default">Unknown</string>
     <!-- [CHAR LIMIT=NONE] Device Info screen. Countdown for user taps to enable development settings -->
     <plurals name="show_dev_countdown">
-        <item quantity="one">You are now <xliff:g id="step_count">%1$d</xliff:g> step away from being a developer.</item>
-        <item quantity="other">You are now <xliff:g id="step_count">%1$d</xliff:g> steps away from being a developer.</item>
+        <item quantity="one">You are now <xliff:g id="step_count">%1$d</xliff:g> step away from being a puss.</item>
+        <item quantity="other">You are now <xliff:g id="step_count">%1$d</xliff:g> steps away from being a puss.</item>
     </plurals>
+	
     <!-- [CHAR LIMIT=NONE] Device Info screen. Confirmation that developer settings are enabled -->
-    <string name="show_dev_on">You are now a developer!</string>
+    <string name="show_dev_on">You are now a puss!</string>
     <!-- [CHAR LIMIT=NONE] Device Info screen. Okay we get it, stop pressing, you already have it on -->
-    <string name="show_dev_already">No need, you are already a developer.</string>
+    <string name="show_dev_already">No need, you are already a puss.</string>
 
     <!-- Category headings in left-pane header menu --> <skip />
     <!-- Settings main menu category heading. Wireless and networks (Wi-Fi, Bluetooth, data usage...). [CHAR LIMIT=40] -->
@@ -358,7 +359,7 @@
     <string name="bluetooth_pb_remember_choice">Don\'t ask again</string>
 
     <!-- Date & time settings screen title -->
-    <string name="date_and_time">Date &amp; time settings</string>
+    <string name="date_and_time">Date &amp; Time settings</string>
     <!-- The title of the activity to pick a time zone. -->
     <string name="choose_timezone">Choose time zone</string>
     <!-- Do not translate. Used as the value for a setting. -->
@@ -612,7 +613,7 @@
 
     <!-- Date and time settings --><skip />
     <!-- Main Settings screen setting option name to go into the date and time settings-->
-    <string name="date_and_time_settings_title">Date &amp; time</string>
+    <string name="date_and_time_settings_title">Date &amp; Time</string>
     <!-- Title for Date & Time settings screen in SetupWizard [CHAR LIMIT=40] -->
     <string name="date_and_time_settings_title_setup_wizard">Set date and time</string>
     <!-- Main Settings screen setting option summary text for the item to go into the date and time settings. -->
@@ -2393,7 +2394,7 @@
     <!-- Main settings screen, setting title for the user to go into the About phone screen -->
     <string name="about_settings" product="tablet">About tablet</string>
     <!-- Main settings screen, setting title for the user to go into the About phone screen -->
-    <string name="about_settings" product="default">About phone</string>
+    <string name="about_settings" product="default">About Phone</string>
     <!-- Main settings screen, setting summary for the user to go into the About phone screen-->
     <string name="about_settings_summary">View legal info, status, software version</string>
     <!-- About phone settings screen, setting option name to go to dialog that shows legal info -->
@@ -2878,13 +2879,13 @@
 
     <!-- Language Settings --> <skip />
     <!-- Title of setting on main settings screen.  This item will take the user to the screen to tweak settings realted to locale and text -->
-    <string name="language_settings">Language &amp; input</string>
+    <string name="language_settings">Language &amp; Input</string>
     <!-- Title of Language and keyboard settings screen -->
-    <string name="language_keyboard_settings_title">Language &amp; input</string>
+    <string name="language_keyboard_settings_title">Language &amp; Input</string>
     <!-- On Language & keyboard settings screen, heading. Inside the "Language & keyboard settings" screen, this is the header for settings that relate to language (select the system language, user dictionary for the language). -->
-    <string name="language_settings_category">Language settings</string>
+    <string name="language_settings_category">Language Settings</string>
     <!-- On Language & keyboard settings screen, heading. Inside the "Language & keyboard settings" screen, this is the header for settings that relate to keyboard (enable/disable each keyboard, settings for each keyboard). -->
-    <string name="keyboard_settings_category">Keyboard &amp; input methods</string>
+    <string name="keyboard_settings_category">Keyboard &amp; Input methods</string>
     <!-- On Text & language settings screen, setting option name. title of the setting to take the user to a screen to select the locale. -->
     <string name="phone_language">Language</string>
     <!-- On Text & language settings screen, setting option name. summary of the setting to take the user to a screen to select the locale. -->
@@ -3066,12 +3067,17 @@
     <string name="builtin_keyboard_settings_summary">Physical keyboard settings</string>
 
     <!-- Development Settings.  the title for the item to take the user to Development settings.  Development settings are settings meant for application developers.  -->
-    <string name="development_settings_title">Developer options</string>
+    <string name="development_settings_title">Oct Settings</string>
     <!-- Development Settings summary.  The summary of the item to take the user to Development settings.  Development settings are settings meant for application developers. -->
     <string name="development_settings_summary">Set options for app development</string>
+    <string name="developer_options_title">Developer Options</string>
     <!-- Setting checkbox title for Whether to enable USB debugging support on the phone. -->
     <!-- Error message for users that aren't allowed to modify developer options [CHAR LIMIT=none] -->
     <string name="development_settings_not_available">Developer options are not available for this user</string>
+    <!-- Themes settings  -->
+    <string name="theme_manager_title">Customize</string>
+    <string name="themes_settings_title">Themes</string>
+    <!-- Setting checkbox title for Whether to enable USB debugging support on the phone. -->
     <string name="enable_adb">USB debugging</string>
     <!-- Setting checkbox summary for Whether to enable USB debugging support on the phone -->
     <string name="enable_adb_summary">Debug mode when USB is connected</string>
@@ -3630,13 +3636,13 @@
 
     <!-- Backup and reset Settings screen --><skip />
     <!-- Backup and reset settings menu title -->
-    <string name="privacy_settings">Backup &amp; reset</string>
+    <string name="privacy_settings">Backup &amp; Reset</string>
     <!-- Privacy settings activity title -->
-    <string name="privacy_settings_title">Backup &amp; reset</string>
+    <string name="privacy_settings_title">Backup &amp; Reset</string>
     <!-- Backup section title -->
-    <string name="backup_section_title">Backup &amp; restore</string>
+    <string name="backup_section_title">Backup &amp; Restore</string>
     <!-- Personal data section title -->
-    <string name="personal_data_section_title">Personal data</string>
+    <string name="personal_data_section_title">Personal Data</string>
     <!-- Backup data menu title -->
     <string name="backup_data_title">Back up my data</string>
     <!-- Summary text of the "back up data" setting -->
@@ -3646,7 +3652,7 @@
     <!-- Default summary text of the "Configure backup account" setting [CHAR LIMIT=80]-->
     <string name="backup_configure_account_default_summary">No account is currently storing backed up data</string>
     <!-- Auto-restore menu title -->
-    <string name="auto_restore_title">Automatic restore</string>
+    <string name="auto_restore_title">Automatic Restore</string>
     <!-- Summary text of the "automatic restore" setting -->
     <string name="auto_restore_summary">When reinstalling an app, restore backed up settings and data</string>
 
@@ -3828,7 +3834,7 @@
     <!-- Message when sync is currently failing [CHAR LIMIT=100] -->
     <string name="sync_is_failing">Sync is currently experiencing problems. It will be back shortly.</string>
     <!-- Button label to add an account [CHAR LIMIT=20] -->
-    <string name="add_account_label">Add account</string>
+    <string name="add_account_label">Add Account</string>
     <!-- Data synchronization settings screen, title of setting that controls whether background data should be used [CHAR LIMIT=30] -->
     <string name="background_data">Background data</string>
     <!-- Data synchronization settings screen, summary of setting that controls whether background data should be used [CHAR LIMIT=60] -->
@@ -3972,7 +3978,7 @@
             on main thread</string>
 
     <!-- UI debug setting: show pointer location? [CHAR LIMIT=25] -->
-    <string name="pointer_location">Pointer location</string>
+    <string name="pointer_location">Pointer Location</string>
     <!-- UI debug setting: show pointer location summary [CHAR LIMIT=50] -->
     <string name="pointer_location_summary">Screen overlay showing current touch data</string>
 
@@ -4071,7 +4077,7 @@
     <string name="experimental_webview_summary">Apps will use the newest (beta) WebView</string>
 
     <!-- Activity title for network data usage summary. [CHAR LIMIT=25] -->
-    <string name="data_usage_summary_title">Data usage</string>
+    <string name="data_usage_summary_title">Data Usage</string>
     <!-- Title for option to pick visible time range from a list available usage periods. [CHAR LIMIT=25] -->
     <string name="data_usage_cycle">Data usage cycle</string>
     <!-- Title for checkbox menu option to enable mobile data when roaming. [CHAR LIMIT=26] -->
@@ -4525,7 +4531,7 @@
     <!-- Restrictions summary for allowing NFC transfers (phone) [CHAR LIMIT=100] -->
     <string name="restriction_nfc_enable_summary" product="default">Allow data exchange when the phone touches another device</string>
     <!-- Restrictions title for allowing location sharing [CHAR LIMIT=35] -->
-    <string name="restriction_location_enable_title">Location access</string>
+    <string name="restriction_location_enable_title">Location Access</string>
     <!-- Restrictions summary for allowing location sharing [CHAR LIMIT=100] -->
     <string name="restriction_location_enable_summary" >Let apps use your location information</string>
 
@@ -4558,12 +4564,5 @@
 
     <!-- Advanced, Device specific (DeviceParts) settings  -->
     <string name="advanced_settings_title">Advanced</string>
-
-    <!-- PERSONALIZATION Settings  -->
-    <!-- Settings main menu category heading. Interface (Launcher, Themes, System). [CHAR LIMIT=40] -->
-    <string name="header_category_interface">Personalization</string>
-    
-    <!-- Themes settings  -->
-    <string name="themes_settings_title">Themes</string> 
 
 </resources>

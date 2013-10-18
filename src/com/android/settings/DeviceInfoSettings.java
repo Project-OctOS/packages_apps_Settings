@@ -65,7 +65,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
     private static final String PROPERTY_EQUIPMENT_ID = "ro.ril.fccid";
 
 
-    static final int TAPS_TO_BE_A_DEVELOPER = 7;
+    static final int TAPS_TO_BE_A_DEVELOPER = 8;
 
     long[] mHits = new long[3];
     int mDevHitCountdown;

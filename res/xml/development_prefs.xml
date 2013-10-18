@@ -16,6 +16,35 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/development_settings_title">
+        
+     <PreferenceCategory android:key="@string/theme_manager_title"
+            android:title="@string/theme_manager_title">
+            
+    <PreferenceScreen 
+        android:key="themes_settings_title"
+        android:title="@string/themes_settings_title"
+        android:icon="@drawable/ic_settings_themes" >     
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.tmobile.themechooser"
+            android:targetClass="com.tmobile.themechooser.ThemeChooser" />
+    </PreferenceScreen>
+            
+    <PreferenceScreen 
+        android:id="@+id/advanced_settings"
+        android:title="@string/advanced_settings_title"
+        android:icon="@drawable/ic_settings_advanced" >
+        <intent
+            android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
+            android:targetPackage="com.cyanogenmod.settings.device"
+            android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
+     </PreferenceScreen>
+            
+     </PreferenceCategory>
+
+     <PreferenceCategory android:key="@string/developer_options_title"
+            android:title="@string/developer_options_title">
+                
     <com.android.settings.BugreportPreference
             android:key="bugreport"
             android:title="@*android:string/bugreport_title"
@@ -48,6 +77,8 @@
         android:key="enforce_read_external"
         android:title="@string/enforce_read_external_title"
         android:summary="@string/enforce_read_external_summary" />
+        
+     </PreferenceCategory> 
 
     <PreferenceCategory android:key="debug_debugging_category"
             android:title="@string/debug_debugging_category">

@@ -140,6 +140,8 @@ public class DevelopmentSettings extends PreferenceFragment
     private static final String TAG_CONFIRM_ENFORCE = "confirm_enforce";
 
     private static final String PACKAGE_MIME_TYPE = "application/vnd.android.package-archive";
+    
+    private static final String ADVANCED_REBOOT_KEY = "advanced_reboot";
 
     private static final int RESULT_DEBUG_APP = 1000;
 
