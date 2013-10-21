@@ -193,6 +193,8 @@ public class DevelopmentSettings extends PreferenceFragment
 
     private CheckBoxPreference mShowAllANRs;
     private CheckBoxPreference mExperimentalWebView;
+    
+    private CheckBoxPreference mAdvancedReboot;
 
     private final ArrayList<Preference> mAllPrefs = new ArrayList<Preference>();
     private final ArrayList<CheckBoxPreference> mResetCbPrefs
@@ -242,11 +244,13 @@ public class DevelopmentSettings extends PreferenceFragment
         mAllowMockLocation = findAndInitCheckboxPref(ALLOW_MOCK_LOCATION);
         mPassword = (PreferenceScreen) findPreference(LOCAL_BACKUP_PASSWORD);
         mAllPrefs.add(mPassword);
+        mAdvancedReboot = findAndInitCheckboxPref(ADVANCED_REBOOT_KEY);
 
         if (!android.os.Process.myUserHandle().equals(UserHandle.OWNER)) {
             disableForUser(mEnableAdb);
             disableForUser(mClearAdbKeys);
             disableForUser(mPassword);
+            disableForUser(mAdvancedReboot);
         }
 
         mDebugAppPref = findPreference(DEBUG_APP_KEY);
@@ -477,6 +481,23 @@ public class DevelopmentSettings extends PreferenceFragment
         updateExperimentalWebViewOptions();
         updateVerifyAppsOverUsbOptions();
         updateBugreportOptions();
+        updateAdvancedRebootOptions();
+    }
+    
+     private void resetAdvancedRebootOptions() {
+         Settings.Secure.putInt(getActivity().getContentResolver(),
+                 Settings.Secure.ADVANCED_REBOOT, 0);
+    }
+    
+    private void writeAdvancedRebootOptions() {
+        Settings.Secure.putInt(getActivity().getContentResolver(),
+                Settings.Secure.ADVANCED_REBOOT,
+                mAdvancedReboot.isChecked() ? 1 : 0);
+    }
+    
+    private void updateAdvancedRebootOptions() {
+        mAdvancedReboot.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
+                Settings.Secure.ADVANCED_REBOOT, 0) != 0);
     }
 
     private void resetDangerousOptions() {
@@ -489,6 +510,7 @@ public class DevelopmentSettings extends PreferenceFragment
             }
         }
         resetDebuggerOptions();
+        resetAdvancedRebootOptions();
         writeAnimationScaleOption(0, mWindowAnimationScale, null);
         writeAnimationScaleOption(1, mTransitionAnimationScale, null);
         writeAnimationScaleOption(2, mAnimatorDurationScale, null);
@@ -1149,6 +1171,8 @@ public class DevelopmentSettings extends PreferenceFragment
             writeShowHwOverdrawOptions();
         } else if (preference == mDebugLayout) {
             writeDebugLayoutOptions();
+        } else if (preference == mAdvancedReboot) {
+            writeAdvancedRebootOptions();
         }
 
         return false;

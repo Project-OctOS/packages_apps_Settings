@@ -39,6 +39,12 @@
             android:targetPackage="com.cyanogenmod.settings.device"
             android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
      </PreferenceScreen>
+     
+    <CheckBoxPreference
+        android:key="advanced_reboot"
+        android:title="@string/advanced_reboot_title"
+        android:summary="@string/advanced_reboot_summary"
+        android:icon="@drawable/reboot_menu" />
             
      </PreferenceCategory>
 
