@@ -4563,10 +4563,10 @@
     <string name="stylus_icon_enabled_summary">Show the pointer icon when hovering or drawing with the stylus</string>
 
 	<!-- Advanced reboot options -->
-	<string name="advanced_reboot_title">Advanced reboot</string>
-	<string name="advanced_reboot_summary">When unlocked, include options in the power menu for rebooting into recovery or bootloader</string>
+	<string name="advanced_reboot_title">Reboot Menu</string>
+	<string name="advanced_reboot_summary">Add options for bootloader and recovery</string>
 
     <!-- Advanced, Device specific (DeviceParts) settings -->
-    <string name="advanced_settings_title">Advanced</string>
+    <string name="advanced_settings_title">Advanced Options</string>
     
 </resources>
